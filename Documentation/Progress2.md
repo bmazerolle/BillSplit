@@ -1,9 +1,7 @@
-# Milestone 3.5 - Progress Report
-## Progress Overview
-This milestone's progress was primarily made in our group and bill functionality. From [Milestone 3's](https://github.com/seng350/seng350f19-project-3-10/blob/master/Documentation/Milestone3.md) user stories, we have now completed user story 2. We have also completed the back end and database work necessary for user stories 6 & 7 by having the functionality in place to pull up a user or group's purchases and bills. We now need to complete our group home page and our view user purchases page front end to display these objects. We also made significant progress towards user story 5 with our deployment to heroku.
+# Progress Report 2
 
 ## Docker
-For this milestone we began containerization process with Docker. This was done by creating a Dockerfile and a
+W began containerization process with Docker. This was done by creating a Dockerfile and a
 docker-compose.yml file. The containerization process has now all been automated by Travis, and at the end of each
 successful build the containerized app gets uploaded to Dockerhub. The app can be run in the Docker container by doing a
 "docker pull" of the branch, and a "docker-compose up -d mongo" to begin running the database, and then finally a

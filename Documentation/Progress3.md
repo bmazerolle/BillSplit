@@ -1,11 +1,7 @@
-# Milestone 4 - Progress Report
-
-## Progress Overview
-
-For this milestone we completed all of our user stories, satisfied all of our quality attribute scenarios, added some more tests and were able to successfully containerize the app and put it on Dockerhub.
+# Progress Report 3
 
 ## User Stories
-For for the final milestone we were able to complete all remaining user stories for our app. Please see the "User Story How-To" section below, to see a step-by-step guide on how to complete each of our user stories on the app.
+We complete dall remaining user stories for our app. Please see the "User Story How-To" section below, to see a step-by-step guide on how to complete each of our user stories on the app.
 
 ###  User Story How-To
 Although creating an account and logging in are not proper user stories, they are necessary in order to complete all our other user stories. Please see user stories 0 and 0.5 to learn how to create an account and login respectively.  User stories 1-7 will assume that user stories 0 and 0.5 have been completed.
