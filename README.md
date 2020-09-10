@@ -1,15 +1,15 @@
 # BillSplit
 Billsplit is a cost-splitting app designed to improve the process of purchasing items for groups.
 
-[Design Document](./Documentation/Milestone2.md)
+[Design Document](./Documentation/DesignDocument.md)
 
-[User Stories Fulfilled and Progress Report 1](./Documentation/Milestone3.md)
+[Progress Report 1](./Documentation/Progress1.md)
 
-[User Stories Fulfilled and Progress Report 2](./Documentation/Milestone3-5.md)
+[Progress Report 2](./Documentation/Progress2.md)
 
-[Final Code Submission](./Documentation/Milestone4.md)
+[Progress Report 3](./Documentation/Progress3.md)
 
-[Project etrospective](./Documentation/retro.md)
+[Retrospective](./Documentation/retro.md)
 
 ## Build Process
 Starting the Database:
