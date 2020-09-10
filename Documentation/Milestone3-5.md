@@ -1,7 +1,7 @@
-# Milestone 3.5 - Progress Report
+# Progress Report 2
 
 ## Docker
-For this milestone we began containerization process with Docker. This was done by creating a Dockerfile and a
+W began containerization process with Docker. This was done by creating a Dockerfile and a
 docker-compose.yml file. The containerization process has now all been automated by Travis, and at the end of each
 successful build the containerized app gets uploaded to Dockerhub. The app can be run in the Docker container by doing a
 "docker pull" of the branch, and a "docker-compose up -d mongo" to begin running the database, and then finally a
