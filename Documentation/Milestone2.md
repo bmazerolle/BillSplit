@@ -1,4 +1,4 @@
-# Milestone 2 - Detailed Design Document 
+# Detailed Design Document 
 
 ### Class Diagram
 
