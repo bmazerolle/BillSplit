@@ -1,0 +1,33 @@
+extends layout
+
+block content
+  header.site-header
+    include navbar
+    script(src="/dist/Chart.bundle.min.js")
+    script(src="/notifications.js")
+    script(src="/home.js")
+    script(src="/groupHome.js")
+
+  body.logged-in-body
+    div.header-image
+      h2.input-page.logged-in-page Welcome, !{userInfo.Name}
+
+    div(style="padding-left:40px;padding-right:40px;padding-bottom:40px")
+      p(id="error")
+      p Spending forecast for this period
+      canvas(id="purchaseGraph", width="400px", height="100px")
+      button(id="help", type="button", class="btn btn-secondary", data-container="body", data-toggle="popover", data-placement="bottom",
+        data-content="This is a forecast of the bills you a part of. It is the net amount of money you will owe on a given day") How does this work?
+      div(class="row")
+        div(class="col")
+          p Upcoming Bills
+          div(id="billStatus", class="list-group", style="padding-top:10px")
+        div(class="col")
+          p Recent Purchases
+          div(id="purchaseList", class="list-group", style="padding-top:10px")
+
+
+
+
+
+

@@ -1,0 +1,54 @@
+extends layout
+
+block content
+    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css")
+    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css")
+    link(href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/css/select2.min.css" rel="stylesheet")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js")
+    script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/js/select2.min.js")
+    script(src="/navbar.js")
+
+    input(type="hidden", id="userId", value=userInfo._id, name="user")
+    input(type="hidden", id="userName", value=userInfo.UserName, name="userName")
+
+    nav.navbar.navbar-expand-lg.navbar-light.bg-light
+        logo(href='/home?user='+userInfo.UserName)
+            img.logo(src="/assets/images/logo.png" width="30" height="30" class="d-inline-block align-top" alt="")
+        button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+            span.navbar-toggler-icon
+
+        .collapse.navbar-collapse(id='navbarSupportedContent')
+            ul.navbar-nav.mr-auto
+                li.nav-item
+                    a.nav-link(href='/home?user='+userInfo.UserName) Home
+                li.nav-item.dropdown
+                    a.nav-link.dropdown-toggle(id='purchaseDropdownMenuLink', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false') Purchases
+                    .dropdown-menu(aria-labelledby='purchaseDropdownMenuLink')
+                        a.dropdown-item(href='/purchase/add?user=' + userInfo.UserName) Add a Purchase
+                        a.dropdown-item(href='/purchase/view?user=' + userInfo.UserName) View Purchases
+                li.nav-item.dropdown
+                    a.nav-link.dropdown-toggle(id='groupDropdownMenuLink', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false') Groups
+                    .dropdown-menu(aria-labelledby='groupDropdownMenuLink')
+                        a.dropdown-item(href='/group/join?user='+userInfo.UserName) Join a Group
+                        a.dropdown-item(href='/group/create?user='+userInfo.UserName) Create a Group
+                        a.dropdown-item(href='/group/view?user='+userInfo.UserName) View Groups
+                li.nav-item.dropdown
+                    a.nav-link.dropdown-toggle(id='billDropdownMenuLink', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false') Bills
+                    .dropdown-menu(aria-labelledby='billDropdownMenuLink')
+                        a.dropdown-item(href='/bills/pay?user='+userInfo.UserName) Pay Bills
+                        a.dropdown-item(href='/bills/view?user='+userInfo.UserName) View Bills
+            ul.navbar-nav.float-right
+                li.nav-item.dropdown
+                    a.nav-link.dropdown-toggle(id='profileDropdownMenuLink', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false') Profile
+                        |
+                        |
+                        span(class="badge badge-secondary", id="notis")
+                    .dropdown-menu.dropdown-menu-right(aria-labelledby='profileDropdownMenuLink')
+                        a.dropdown-item(href="/notifications/view?user="+userInfo.UserName) Notifications
+                            |
+                            |
+                            span(class="badge badge-secondary", id="notis2")
+                        a.dropdown-item(href='/profile?user='+userInfo.UserName) Your Profile
+                        a.dropdown-item(href='/#') Log Out

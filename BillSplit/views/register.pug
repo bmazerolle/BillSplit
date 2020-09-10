@@ -1,0 +1,38 @@
+extends layout
+
+block content
+    head
+
+        title Register
+        link(rel='stylesheet', href='/stylesheets/style.css', type='text/css')
+        script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+        script(src="/register.js")
+
+    body.landing-body
+        div.input-form(style="margin-bottom:80px")
+            h2.input-page.landing-page Create a BillSplit Account
+            if (regMessage)
+                p=regMessage
+            form.entry#register
+                div
+                    div.form
+                        label(for='name-reg')
+                        input.text#name-reg.form-control(type='text', placeholder='First and Last Name' name='name-reg')
+                    div.form
+                        label(for='username-reg')
+                        input.text#username-reg.form-control(type='text', placeholder='Username' name='username-reg')
+                    div.form
+                        label(for='email-reg')
+                        input.text#email-reg.form-control(type='text', placeholder='Email' name='email-reg')
+                    div.form
+                        label(for='pass-reg')
+                        input.text#pass-reg.form-control(type='password', placeholder='Password' name='pass-reg')
+                    div.form
+                        label(for='pass-conf-reg')
+                        input.text#pass-conf-reg.form-control(type='password', placeholder='Confirm' name='pass-conf-reg')
+            div.input-form-buttons
+                a(href="/")
+                    button(type="button" class="btn btn-secondary btn-prelogin", data-dismiss="modal") Cancel
+                button(id="registerButton", type='submit', form="register" class="btn btn-primary btn-prelogin", data-dismiss="modal") Register
+
+    include footer

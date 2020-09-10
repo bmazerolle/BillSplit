@@ -1,0 +1,27 @@
+version: "2"
+services:
+  #app service
+  app:
+    container_name: app
+    #restart on fail
+    restart: always
+    #build all
+    build: .
+    #mount port
+    ports:
+      - "3000:3000"
+    environment:
+      - MONGODB_URI= mongodb://mongo:27017/billsplit
+    #link app with mongo
+    links:
+      - mongo
+  #mongo service
+  mongo:
+    container_name: mongo
+    image: mongo
+    #linking database
+    # volumes:
+    #   - ./db/storage:/data/db
+    #map port 27017 with port 27017
+    ports:
+      - "27017:27017"

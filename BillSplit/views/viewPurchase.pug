@@ -1,0 +1,24 @@
+extends layout
+block content
+
+    header.site-header
+        include navbar
+
+    input(type="hidden", value=userInfo._id, id="userId", name="user")
+
+    - function makeReadable(date) { let dateObj = new Date(date); return dateObj.toDateString(); };
+    h1.title Your Purchases
+    div.list-container
+        ul(class="list-group")
+            each purchase in userInfo.Purchases.reverse()
+                li(class="list-group-item" id="listItem")
+                    div.row
+                        div.col.col-left
+                            p=purchase.name
+                        div.col.col-right
+                            p=purchase.groupName
+                    div.row.sub-row
+                        div.col.col-left
+                            p="$" + purchase.price
+                        div.col.col-right
+                            p #{makeReadable(purchase.date)}

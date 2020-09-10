@@ -1,0 +1,10 @@
+extends layout
+block content
+
+    header.site-header
+        include navbar
+        script(src="/billsView.js")
+            
+    h1.title View Bills From Past Months
+    div.list-container
+        ul(id="billStatus", class="list-group")

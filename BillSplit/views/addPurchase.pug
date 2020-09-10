@@ -1,0 +1,52 @@
+extends layout
+block content
+    header.site-header
+        script(src='/purchases.js')
+        include navbar
+
+    input(type="hidden", value=userInfo._id, id="userId", name="user")
+
+    div(class="container", style="text-align:center;position:absolute;top:70px")
+        p(id='message')
+
+    div(class="modal fade", id="createFormDiv", tabindex="-1", role="dialog", aria-labelledby="exampleModalLabel", aria-hidden="true")
+        div(class="modal-dialog", role="document")
+            div(class="modal-content")
+                div(class="modal-header")
+                    h5(class="modal-title", id="itemFormLabel") Add Item
+                    button(type="button", class="close", data-dismiss="modal", aria-label="Close")
+                div(class="modal-body")
+                    form(id='item-add', method='POST', action='/items/add')
+                        div(class="form-group")
+                            label(for="item-name") Item Name
+                            input(class="form-control", id="item-name", name="item-name")
+                        div(class="form-group")
+                            label(for="item-price") Item Price
+                            input(class="form-control", id="item-price", name="item-price")
+                div(class="modal-footer")
+                    button(type="button", class="btn btn-secondary", data-dismiss="modal") Close
+                    button(type="button" class="btn btn-primary", data-dismiss="modal", id="item-add-submit") Add
+
+
+    div(style="margin-left:300px;margin-right:300px;margin-top:100px", class='md-form')
+        h1 Add Purchase to Bill
+        form(id='purchase-add', method='POST', action='/purchase/add')
+            label(for="bill-item-id" class="active") Item
+            div.absolute-center
+                select(class="form-control select", id="bill-item-id", name="bill-item-id", autocomplete="on")
+                div(class='btn-group create-item-button')
+                    button#AmodalTrigger(type='button' class='btn btn-primary', data-toggle='modal', data-target="#createFormDiv") Create Item
+            label(for="bill-purchase-quantity", class="active") Quantity
+            input(class="form-control", id="bill-purchase-quantity", name="bill-purchase-quantity")
+            label(for="bill-purchase-frequency", class="active") Purchase Frequency
+            select(class="form-control select", id="bill-purchase-frequency", name="bill-purchase-frequency" autocomplete="off")
+                option(value=1) One Time
+                option(value=7) Weekly
+                option(value=30) Monthly
+                option(value=365) Yearly
+            label(for="bill-id", class="active") Billing Group
+            select(class="form-control select", id="groupName", name="groupName", autocomplete="off")
+                each group in userInfo.GroupOs
+                    option(value=group._id)=group.Name
+            button(type="button", style="margin-top:25px;", class="btn btn-primary pull-right", id="bill-add-submit") Add to Group's Bill
+

@@ -1,0 +1,13 @@
+extends layout
+
+block content
+    header.site-header
+        include navbar
+        script(src="/notifications.js")
+        script(src="/clearNotifications.js")
+
+    body
+        div(style="padding:50px;")
+            h1 Your Notifications
+            div(style="border-top:1px solid black; padding-top: 10px")
+                ul(class="list-group", id="notificationBox")

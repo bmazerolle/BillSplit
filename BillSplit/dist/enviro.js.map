@@ -1,0 +1,1 @@
+{"version":3,"file":"enviro.js","sourceRoot":"","sources":["../src/enviro.ts"],"names":[],"mappings":";;AAAA,iCAA8B;AAC9B,6BAA6B;AAE7B,eAAM,CAAC,EAAC,IAAI,EAAE,cAAO,CAAC,SAAS,EAAE,SAAS,CAAC,EAAC,CAAC,CAAC","sourcesContent":["import {config} from \"dotenv\";\nimport {resolve} from \"path\";\n\nconfig({path: resolve(__dirname, \"../.env\")});\n"]}

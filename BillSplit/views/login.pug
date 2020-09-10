@@ -1,0 +1,31 @@
+extends layout
+
+block content
+    head
+        link(rel='stylesheet', href='/stylesheets/style.css', type='text/css')
+        script(src="/login.js")
+        script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+        //script(src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/js/bootstrap.min.js')
+        //link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css')
+
+    body.landing-body
+        div.input-form
+            h2.input-page.landing-page Log in to BillSplit
+            if (regMessage)
+                p=regMessage
+            div
+                form.entry(id="loginForm")
+                    div.form
+                        label(for='email-log')
+                        input.text#email-log.form-control(type='text', placeholder='Username' name='email-log')
+                    div.form
+                        label(for='pass-log')
+                        input.text#pass-log.form-control(type='password', placeholder='Password' name='pass-log')
+                    div.form
+                        input(id="loginButton", class="btn-primary btn-prelogin", type='submit', value="Sign in")
+
+            p(style="color: black;") New to BillSplit?
+            div.helper-link(style="margin-bottom:80px;")
+                a.helper-link(href="/register") Create an Account
+
+    include footer

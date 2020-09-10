@@ -1,0 +1,31 @@
+extends layout
+
+block content
+    header.site-header
+        include navbar
+        link(rel='stylesheet', href='/stylesheets/style.css', type='text/css')
+        //script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+        //script(src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/js/bootstrap.min.js')
+        //link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css')
+
+    body.logged-in-body
+        div.header-image
+            h2.input-page.logged-in-page Your Profile
+        div.information-form
+            img.profile-image()
+            if (regMessage)
+                p=regMessage
+            form.entry-information
+                div.form-div
+                    div.form
+                        input#name-reg.form-control(type='text', placeholder='First and Last Name' name='name-reg')
+                    div.form
+                        input#email-reg.form-control(type='text', placeholder='Email' name='email-reg')
+                    div.form
+                        input#pass-reg.form-control(type='password', placeholder='Password' name='pass-reg')
+                    div.form
+                        input#pass-conf-reg.form-control(type='password', placeholder='Confirm' name='pass-conf-reg')
+
+            a(href="/profile")
+                button.submit.inverted.small Cancel
+            button.submit.small(type='submit', form="register") Save

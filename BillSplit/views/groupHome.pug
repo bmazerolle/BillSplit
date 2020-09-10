@@ -1,0 +1,53 @@
+extends layout
+
+block content
+    header.site-header
+        include navbar
+        script(src="/groupHome.js")
+        script(src="/notifications.js")
+        script(src="/dist/Chart.bundle.min.js")
+
+    input(type="hidden", value=groupInfo._id, id="groupId", name="group")
+    input(type="hidden", value=userInfo._id, id="userId", name="user")
+    input(type="hidden", value=userInfo.UserName, id="userName", name="user-name")
+
+    body
+        div(class="modal fade", id="leaveGroupDiv", tabindex="-1", role="dialog", aria-labelledby="exampleModalLabel", aria-hidden="true")
+            div(class="modal-dialog", role="document")
+                div(class="modal-content")
+                    div(class="modal-header")
+                        h3 Leave Group?
+                    div(class="modal-body")
+                        p You will no longer receive new invoices from this group if you leave
+                    div(class="modal-footer")
+                        button(type="button", class="btn btn-secondary", data-dismiss="modal") Close
+                        button(type="button" class="btn btn-primary", data-dismiss="modal", id="group-leave-submit") Leave
+
+        div(style="margin-top:40px;margin-right:40px;")
+            button(id="leave-group", style="float:right", type='button' class='btn btn-primary', data-toggle='modal', data-target="#leaveGroupDiv") Leave Group
+        div(style="margin:auto;width:50%;padding-top:40px;text-align:center")
+            h1(id="group-name")=groupInfo.Name
+        div(style="margin:auto;width:50%;padding:1px;text-align:center")
+            p(id="names" style="color:#A9A9A9")
+        div(style="margin:auto;width:50%;text-align:center")
+            p(class='display-9', id="groupTotal")
+        br
+        div(style="padding-left:40px;padding-right:40px;padding-bottom:40px")
+            h2 Spending forecast for this period
+            p(style="color:#A9A9A9", id="period")
+            div
+                p(id="forecastError")
+                canvas(id="purchaseGraph", width="400px", height="100px")
+                button(id="help", type="button", class="btn btn-secondary", data-container="body", data-toggle="popover", data-placement="bottom",
+                    data-content="This graph is a model of the frequency, date and price of the purchases made in a group") How does this work?
+                p(id="memberSpendingError")
+                h2 Spending by member
+                canvas(id="barGraph", width="400px", height="100px")
+
+        div(style="padding-left:40px;padding-right:40px;padding-bottom:60px;")
+            p Recent Purchases
+            p(id="listingError")
+            div(id="purchaseList", class="list-group", style="padding-top:10px")
+
+    include footer
+

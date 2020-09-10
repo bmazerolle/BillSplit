@@ -1,0 +1,29 @@
+extends layout
+block content
+
+    header.site-header
+        include navbar
+        script(src="/billsPay.js")
+
+    div(class="modal fade", id="createFormDiv", tabindex="-1", role="dialog", aria-labelledby="exampleModalLabel", aria-hidden="true")
+        div(class="modal-dialog", role="document")
+            div(class="modal-content")
+                div(class="modal-header")
+                    h5(class="modal-title", id="itemFormLabel") Pay for Bill
+                div(class="modal-body")
+                    p.center-text By clicking "I Paid", you are stating that you have paid your bill's outstanding balance for:
+                    form(id='bill-pay', method='POST', action='/bill/pay')
+                        div(class="form-group")
+                            h5.absolute-center(id="groupName")
+                            p(hidden class="form-control", id="groupId")
+                            p(hidden class="form-control", id="billYear")
+                            p(hidden class="form-control", id="billMonth")
+                            input(hidden class="form-control", id="userId", value=userInfo._id)
+                    p.absolute-center The bill's payee must approve this payment to close the bill.
+                div(class="modal-footer")
+                    button(type="button", class="btn btn-secondary", data-dismiss="modal") Cancel
+                    button(type="button" class="btn btn-primary", data-dismiss="modal", id="bill-pay-submit", onClick="payBill()") I Paid
+
+    h1.title Pay Upcoming Bills
+    div.list-container
+        ul(id="billStatus", class="list-group")

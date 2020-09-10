@@ -1,0 +1,19 @@
+extends layout
+
+block content
+    header.site-header
+        script(src="/groupCreate.js")
+        script(src='/groupJoin.js')
+        include navbar
+
+    body
+        div(style="margin-left:300px;margin-right:300px;margin-top:150px", class='md-form')
+            h1 Join Group
+            form(id='member-add', method='POST', action='/group/add')
+                input(type="hidden", id="group-members", name="group-members", value=userInfo._id, style="display:none; width: 0px;")
+                select(class="form-control select", id="group-id", name="group-id")
+                button(type="button", style="float:right;margin-top:25px;margin-bottom:30px;" class="btn btn-primary", id="member-join-submit") Join
+        div(style="margin:auto;width:50%;padding:150px;padding-top:0px")
+            p(id="message")
+
+

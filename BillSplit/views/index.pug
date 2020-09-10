@@ -1,0 +1,12 @@
+extends layout
+
+block content
+
+  body.landing-body
+    div.absolute-center
+      h1.homepage Welcome to BillSplit.
+    div.absolute-center
+      a(href="/register")
+        button(type="button" class="btn btn-secondary btn-prelogin", data-dismiss="modal") Sign Up
+      a(href="/login")
+        button(type="button", class="btn btn-primary btn-prelogin", data-dismiss="modal") Log In

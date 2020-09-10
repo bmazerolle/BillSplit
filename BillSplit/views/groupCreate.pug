@@ -1,0 +1,28 @@
+extends layout
+
+block content
+    header.site-header
+        include navbar
+        script(src="/groupCreate.js")
+        input(type="hidden", value=userInfo, id="userInfo")
+
+
+    body
+        div(style="margin-left:300px;margin-right:300px;margin-top:150px", class='md-form')
+            h1 Create Group
+            form(id='group-add', method='POST', action='/group/add')
+                div.row
+                    div.col
+                        label(for='group-name' class='active') Group Name
+                        input(class="form-control", id="group-name", name="group-name")
+                div.row
+                    div.col(style="margin-top: 50px;")
+                        label(for='group-members' class='active') Group Members
+                        select(class="form-control", id="group-members", name="group-members", multiple="multiple")
+                            optgroup(label="Users", id="users")
+                div.row
+                    div.col(style="margin-top: 150px;")
+                        button(type="button", style="float:right;margin-left:5px;", class="btn btn-secondary") Close
+                        button(type="button", style="float:right;" class="btn btn-primary", id="group-add-submit") Add
+    div.absolute-center(style="padding-top:200px;")
+        p1(id="message")
