@@ -1,7 +1,6 @@
-# Milestone 3 - Progress Report
+# Progress Report
 
 ## Updated User Stories
-We received poor feedback on our first milestone, so for purposes of future project improvement we rewrote our user stories to better reflect the business logic of our app. They are as follows:
 
 1) As a user I want to add items I’ve purchased, their corresponding costs, and the frequencies at which I purchase them
 2) As a user I want to join and leave billing groups
@@ -10,10 +9,6 @@ We received poor feedback on our first milestone, so for purposes of future proj
 5) As a user I want to be notified about and notify others of bills that are owed in my group(s)
 6) As a user I want to view my billing metrics, including amount owed, payment history and average spent per month
 7) As a user who is a member of a group, I want to view that group's billing metrics such as the spending of all members, who’s spending the most and the average spent per month by the group
-
-
-## Progress Overview
-For Milestone 3, our group completed the functionality needed for user story 1. As shown in our [Design Document](./Milestone2.md), there is a large amount of coupling between our controllers and classes, thus completing this user story required us to complete 4/5 of our models: Authentication, Item, Bill and User. The models, controllers, and views completed also serve to complete large portions of user stories 2-7, and our group is satisfied with the amount of infrastructure we have developed thus far.
 
 ## Change log
 Listed below are critical design or implementation decisions made after the creation of the initial design document.
