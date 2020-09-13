@@ -1,6 +1,8 @@
 # BillSplit
 Billsplit is a cost-splitting app designed to improve the process of purchasing items for groups.
 
+https://billsplittt.herokuapp.com/
+
 [Design Document](./Documentation/DesignDocument.md)
 
 [Progress Report 1](./Documentation/Progress1.md)
